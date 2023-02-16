@@ -23,6 +23,8 @@
   <link href="css/style.css" rel="stylesheet"/>
   <!-- responsive style -->
   <link href="css/responsive.css" rel="stylesheet"/>
+  <script src="https://kit.fontawesome.com/77b52c446f.js" crossorigin="anonymous"></script>
+
 </head>
 
 <body>

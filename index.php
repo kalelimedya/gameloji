@@ -1,4 +1,30 @@
 <?php include 'header.php'; ?>
+<style>
+  .item-1 {
+    border: 2px solid #e3e3e3;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-right: 10px;
+    padding-left: 10px;
+    transition: 1000ms all;
+    box-shadow: 3px 5px #e3e3e3;
+    opacity: 80%;
+    filter: blur(0.5px);
+  }
+  .item-1:hover {
+    border: 2px solid #737070;
+    box-shadow: 3px 5px #737070;
+    transition: 1000ms all;
+    opacity: 100%;
+     filter: blur(0px);
+     border-radius: 15px;
+  }
+  @media (min-width: 500px) {
+    .item-1 {
+      text-align: center;
+    }
+}
+</style>
     <!-- slider section -->
     <section class=" slider_section ">
       <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
@@ -88,12 +114,28 @@
         </h2>
       </div>
       <div class="layout_padding2">
-        <div class="img-box">
-          <img src="images/welcome.png" alt=""/>
+        <div class="item-1" style="margin-bottom: 20px;">
+          <div class="row">
+                  <div class="col-md-6">
+                    <div class="img-box">
+                      <img src="images/gif1.gif" style="border-top-right-radius: 10px;border-bottom-right-radius: 10px;">
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <h2 style="text-align: left;">Egg it Up</h2>
+                    <p style="text-align: left;">Yumurtayı tavalarda zıplatarak puan ve para biriktir, rakiplerini geç ve ödülleri kazan!</p>
+                    <div class="text-left">
+                      <a href="contact.php" class="btn btn-secondary" style="border-radius:5px;">
+                        <i class="fa-brands fa-google-play"></i>  Google Play Store
+                      </a> <br>
+                       <a href="contact.php" class="btn btn-secondary" style="border-radius:5px;margin-top: 10px;">
+                        <i class="fa-brands fa-app-store-ios"></i> App Store
+                      </a>
+                    </div>
+                  </div>
+            </div>
         </div>
-        <div class="detail-box">
-          
-        </div>
+
       </div>
 
     </div>
