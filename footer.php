@@ -15,7 +15,7 @@
             <div class="col-md-6 col-lg-4">
               <div class="d-flex">
                 <h5>
-                  Useful Link
+                  Diğer Sayfalarımız
                 </h5>
               </div>
               <div class="d-flex ">
@@ -46,33 +46,7 @@
                     </a>
                   </li>
                 </ul>
-                <ul class="ml-3 ml-md-5">
-                  <li>
-                    <a href="">
-                      Loram ipusm
-                    </a>
-                  </li>
-                  <li>
-                    <a href="">
-                      Loram ipusm
-                    </a>
-                  </li>
-                  <li>
-                    <a href="">
-                      Loram ipusm
-                    </a>
-                  </li>
-                  <li>
-                    <a href="">
-                      Loram ipusm
-                    </a>
-                  </li>
-                  <li>
-                    <a href="">
-                      Loram ipusm
-                    </a>
-                  </li>
-                </ul>
+              
               </div>
             </div>
             <div class="col-md-6 col-lg-4">
