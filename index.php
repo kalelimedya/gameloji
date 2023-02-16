@@ -14,29 +14,27 @@
                 <div class="col-lg-5 col-md-6">
                   <div class="slider_detail-box">
                     <h1>
-                      Start <br/>
-                      Business with <br/>
-                      Our Company
+                      Eğlendiren <br> Oyunların Fabrikası
                     </h1>
                     <p>
-                      sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
-                      nostrud exercitation ullamco laboris nisi
+                      Eğlendiren ve her zaman eğlendirmeye devam edecek maceramıza siz de katılmak ister misiniz?
                     </p>
                     <div class="btn-box">
-                      <a href="" class="btn-1">
-                        Read More
+                      <a href="contact.php" class="btn-1">
+                        İletişim
                       </a>
                     </div>
                   </div>
                 </div>
                 <div class="col-md-6">
                   <div class="slider_img-box">
-                    <img src="images/slider-img.png" alt=""/>
+                    <img src="images/gif4.gif" style="border-radius: 10px;" alt=""/>
                   </div>
                 </div>
               </div>
             </div>
           </div>
+
           <div class="carousel-item">
             <div class="container">
               <div class="row">
@@ -66,35 +64,7 @@
               </div>
             </div>
           </div>
-          <div class="carousel-item">
-            <div class="container">
-              <div class="row">
-                <div class="col-lg-5 col-md-6">
-                  <div class="slider_detail-box">
-                    <h1>
-                      Start <br/>
-                      Business with <br/>
-                      Our Company
-                    </h1>
-                    <p>
-                      sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
-                      nostrud exercitation ullamco laboris nisi
-                    </p>
-                    <div class="btn-box">
-                      <a href="" class="btn-1">
-                        Read More
-                      </a>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-md-6">
-                  <div class="slider_img-box">
-                    <img src="images/slider-img.png" alt=""/>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+         
         </div>
         <div class="carousel_btn-container">
           <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
@@ -114,7 +84,7 @@
     <div class="container">
       <div class="custom_heading-container">
         <h2>
-          Welcome To Our Company
+            Oyunlarımız
         </h2>
       </div>
       <div class="layout_padding2">
@@ -122,18 +92,7 @@
           <img src="images/welcome.png" alt=""/>
         </div>
         <div class="detail-box">
-          <p>
-            dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
-            aliqua.
-            Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-            Duis
-            aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-          </p>
-          <div>
-            <a href="">
-              Read More
-            </a>
-          </div>
+          
         </div>
       </div>
 
