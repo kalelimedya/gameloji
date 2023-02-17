@@ -1,4 +1,10 @@
 <?php 
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
+//Your function Code 
+?>
+
+<?php 
 	include 'vt.php';
 	include 'function.php';
 	if (isset($_POST['contactadd'])) {
@@ -22,7 +28,48 @@
 		'tel'=>$_POST['tel']
 		));
 		if ($sonuc) {
-			header("location:../contact.php?durum=ok");
+			    require 'PHPMailer/src/Exception.php';
+                                require 'PHPMailer/src/PHPMailer.php';
+                                require 'PHPMailer/src/SMTP.php';
+                                
+                                
+                                $mail = new PHPMailer(true);
+                                try {
+                                //Server settings
+                                $mail->CharSet = 'UTF-8';
+                                $mail->SMTPDebug = 0; // debug on - off
+                                $mail->isSMTP(); 
+                                $mail->Host = 'smtp.gmail.com'; // SMTP sunucusu örnek : mail.alanadi.com
+                                $mail->SMTPAuth = true; // SMTP Doğrulama
+                                $mail->Username = 'uscewyazilim@gmail.com'; // Mail kullanıcı adı
+                                $mail->Password = 'jtddwpcezgvefakz'; // Mail şifresi
+                                $mail->SMTPSecure = 'ssl'; // Şifreleme
+                                $mail->Port = 465; // SMTP Port
+                                $mail->SMTPOptions = array(
+                                'ssl' => array(
+                                'verify_peer' => false,
+                                'verify_peer_name' => false,
+                                'allow_self_signed' => true
+                                )
+                                );
+                                
+                                //Alıcılar
+                                $mail->setfrom('uscewyazilim@gmail.com', 'Soru Sorun&Teklif Al');
+                                $mail->addAddress('uscewyazilim@gmail.com');
+                                $mail->addReplyTo('uscewyazilim@gmail.com');
+                                //İçerik
+                                $mail->isHTML(true);
+                                $mail->Subject = 'Firma:'.$_POST['business'];
+                                $mail->Body ="İsim ve Soyadı:".$_POST['name']."<br>".  "Mesaj:".$_POST['message']."<br> <br>"."Telefon Numarası:".$_POST['tel']."<br>"."Şirket:".$_POST['business'];
+                                
+
+
+								$mail->send();
+                                echo "Mesajınız İletildi --> ".$_POST['mail']."<br>";
+								 header("location:../contact.php?durum=ok");
+                                } catch (Exception $e) {
+                                echo 'Mesajınız İletilemedi. Hata: ', $mail->ErrorInfo;
+                                }
 		}
 		else
 		{
