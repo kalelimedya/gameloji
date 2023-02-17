@@ -4,7 +4,7 @@
     <div class="container">
       <div class="custom_heading-container">
         <h2>
-          Our Services
+          BLOG
         </h2>
       </div>
       <div class="service_container layout_padding2">
@@ -21,6 +21,11 @@
               have suffered alteration in some form, by injected humour, or randomised words which don&#39;t look even
               slightly believable. If you are
             </p>
+                  <div>
+                    <a href="">
+                      Devamını oku
+                    </a>
+                  </div>
           </div>
         </div>
         <div class="service_box">
@@ -35,7 +40,13 @@
             <p>
               have suffered alteration in some form, by injected humour, or randomised words which don&#39;t look even
               slightly believable. If you are
+
             </p>
+            <div>
+                    <a href="">
+                      Devamını oku
+                    </a>
+                  </div>
           </div>
         </div>
         <div class="service_box">
@@ -51,14 +62,16 @@
               have suffered alteration in some form, by injected humour, or randomised words which don&#39;t look even
               slightly believable. If you are
             </p>
+            <div>
+                    <a href="">
+                      Devamını oku
+                    </a>
+                  </div>  
           </div>
         </div>
+
       </div>
-      <div>
-        <a href="">
-          Read More
-        </a>
-      </div>
+
     </div>
   </section>
 <?php include 'footer.php'; ?>
