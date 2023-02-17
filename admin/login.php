@@ -51,7 +51,7 @@
                                         <h1 class="h4 text-gray-900 mb-4">YIGITHANGUMUS V1.0</h1>
                                         <h1 class="h4 text-gray-900 mb-4">Welcome Back!</h1>
                                     </div>
-                                    <form class="user" action="../yon/ajax.php" method="POST">
+                                    <form class="user" action="../islemler/ajax.php" method="POST">
                                         <div class="form-group">
                                             <input type="email" class="form-control form-control-user"
                                                 id="exampleInputEmail" aria-describedby="emailHelp"
@@ -66,7 +66,7 @@
                                          
                                             </div>
                                         </div>
-                                        <button class="btn btn-primary btn-user btn-block" name="oturumacma2">
+                                        <button class="btn btn-primary btn-user btn-block" name="oturumacma">
                                           <b>Login</b>
                                         </button>
                                        

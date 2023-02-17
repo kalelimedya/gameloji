@@ -93,8 +93,8 @@
 						<input type="text" name="site_harita" value="<?php echo $ayarcek['site_harita'] ?>" class="form-control">
 					</div>
 					<div class="col-lg-6">
-						<label>Github:</label>
-						<input type="text" name="github" value="<?php echo $ayarcek['github'] ?>" class="form-control">
+						<label>Site Logo</label>
+						<input type="file" name="site_logo" class="form-control-file">
 					</div>
 				</div>
 				<div style="margin-top:20px;margin-bottom: 20px;">
