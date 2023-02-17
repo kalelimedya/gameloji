@@ -1,3 +1,4 @@
+<?php include 'islemler/vt.php'; ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,11 +9,11 @@
   <!-- Mobile Metas -->
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
   <!-- Site Metas -->
-  <meta name="keywords" content=""/>
-  <meta name="description" content=""/>
-  <meta name="author" content=""/>
+  <meta name="<?php echo $ayarcek['site_keywords'] ?>" content=""/>
+  <meta name="<?php echo $ayarcek['site_tanim'] ?>" content=""/>
+  <meta name="<?php echo $ayarcek['site_yazari'] ?>" content=""/>
 
-  <title>GAMELOJİ</title>
+  <title><?php echo $ayarcek['site_baslik'] ?></title>
 
   <!-- slider stylesheet -->
   <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.1.3/assets/owl.carousel.min.css"/>

@@ -21,28 +21,23 @@
               <div class="d-flex ">
                 <ul>
                   <li>
-                    <a href="">
-                      About Us
+                    <a href="index.php">
+                      Anasayfa
+                    </a>
+                  </li>
+                  <li>
+                    <a href="service.php">
+                      Hizmetlerimiz
+                    </a>
+                  </li>
+                  <li>
+                    <a href="blog.php">
+                      Blog
                     </a>
                   </li>
                   <li>
                     <a href="">
-                      About services
-                    </a>
-                  </li>
-                  <li>
-                    <a href="">
-                      About Departments
-                    </a>
-                  </li>
-                  <li>
-                    <a href="">
-                      Services
-                    </a>
-                  </li>
-                  <li>
-                    <a href="">
-                      Contact Us
+                      İletişim
                     </a>
                   </li>
                 </ul>
@@ -52,157 +47,43 @@
             <div class="col-md-6 col-lg-4">
               <div class="d-flex">
                 <h5>
-                  The Services
+                  Blog
                 </h5>
               </div>
               <div class="d-flex ">
-                <ul>
-                  <li>
-                    <a href="">
-                      About Us
-                    </a>
-                  </li>
-                  <li>
-                    <a href="">
-                      About services
-                    </a>
-                  </li>
-                  <li>
-                    <a href="">
-                      About Departments
-                    </a>
-                  </li>
-                  <li>
-                    <a href="">
-                      Services
-                    </a>
-                  </li>
-                  <li>
-                    <a href="">
-                      Contact Us
-                    </a>
-                  </li>
-                </ul>
-                <ul class="ml-3 ml-md-5">
-                  <li>
-                    <a href="">
-                      Lorem ipsum dolor
-                    </a>
-                  </li>
-                  <li>
-                    <a href="">
-                      sit amet, consectetur
-                    </a>
-                  </li>
-                  <li>
-                    <a href="">
-                      adipiscing elit,
-                    </a>
-                  </li>
-                  <li>
-                    <a href="">
-                      sed do eiusmod
-                    </a>
-                  </li>
-                  <li>
-                    <a href="">
-                      tempor incididunt
-                    </a>
-                  </li>
-                </ul>
+                
               </div>
             </div>
             <div class="col-md-6 col-lg-4">
               <div class="d-flex">
                 <h5>
-                  Contact Us
+                  Adresimiz
                 </h5>
               </div>
               <div class="d-flex ">
-                <ul>
-                  <li>
-                    <a href="">
-                      About Us
-                    </a>
-                  </li>
-                  <li>
-                    <a href="">
-                      About services
-                    </a>
-                  </li>
-                  <li>
-                    <a href="">
-                      About Departments
-                    </a>
-                  </li>
-                  <li>
-                    <a href="">
-                      Services
-                    </a>
-                  </li>
-                  <li>
-                    <a href="">
-                      Contact Us
-                    </a>
-                  </li>
-                </ul>
-                <ul class="ml-3 ml-md-5">
-                  <li>
-                    <a href="">
-                      Lorem ipsum
-                    </a>
-                  </li>
-                  <li>
-                    <a href="">
-                      dolor sit amet,
-                    </a>
-                  </li>
-                  <li>
-                    <a href="">
-                      consectetur
-                    </a>
-                  </li>
-                  <li>
-                    <a href="">
-                      adipiscing
-                    </a>
-                  </li>
-                  <li>
-                    <a href="">
-                      elit, sed do eiusmod
-                    </a>
-                  </li>
-                </ul>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d6309.2434272453775!2d30.552832!3d37.752018!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14c5b5a04f6249b7%3A0x76a624149201647b!2sUstam%20Park%20Evleri!5e0!3m2!1str!2str!4v1676626005364!5m2!1str!2str" width="600" height="250" style="border:0.5px solid black;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
               </div>
             </div>
           </div>
         </div>
         <div class="d-flex flex-column flex-lg-row justify-content-between align-items-center align-items-lg-baseline">
           <div class="social-box">
-            <a href="">
+            <a href="<?php echo $ayarcek['site_facebook'] ?>">
               <img src="images/fb.png" alt=""/>
             </a>
 
-            <a href="">
+            <a href="<?php echo $ayarcek['site_twitter'] ?>">
               <img src="images/twitter.png" alt=""/>
             </a>
-            <a href="">
+            <a href="<?php echo $ayarcek['site_linkedin'] ?>">
               <img src="images/linkedin1.png" alt=""/>
             </a>
-            <a href="">
+            <a href="<?php echo $ayarcek['site_instagram'] ?>">
               <img src="images/instagram1.png" alt=""/>
             </a>
           </div>
           <div class="form_container mt-5">
-            <form action="">
-              <label for="subscribeMail">
-                Newsletter
-              </label>
-              <input type="email" placeholder="Enter Your email" id="subscribeMail"/>
-              <button type="submit">
-                Subscribe
-              </button>
-            </form>
+           
           </div>
         </div>
       </div>
@@ -214,8 +95,8 @@
     <!-- footer section -->
     <section class="container-fluid footer_section">
       <p>
-        © 2019 All Rights Reserved By
-        <a href="https://html.design/">Free Html Templates</a>
+        © 2023 Bütün hakları saklıdır. Developed by
+        <a href="https://yigithangumus.com">Yigithan&Eren</a>
       </p>
     </section>
     <!-- footer section -->
