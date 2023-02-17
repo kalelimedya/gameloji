@@ -2,9 +2,9 @@
 	ob_start();
 	@session_start();
 	$host="localhost";
-	$vtname="yigitha4_gameloji";
-	$username="yigitha4_root";
-	$password="y!ASD!qwe!";
+	$vtname="gameloji";
+	$username="root";
+	$password="";
 	try {
 		$db=new pdo("mysql:host=$host;dbname=$vtname;charset=utf8",$username,$password);
 	} catch (Exception $e) {
