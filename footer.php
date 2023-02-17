@@ -51,7 +51,28 @@
                 </h5>
               </div>
               <div class="d-flex ">
-                  
+                  <ul>
+                  <li>
+                    <a href="index.php">
+                      Anasayfa
+                    </a>
+                  </li>
+                  <li>
+                    <a href="service.php">
+                      Hizmetlerimiz
+                    </a>
+                  </li>
+                  <li>
+                    <a href="blog.php">
+                      Blog
+                    </a>
+                  </li>
+                  <li>
+                    <a href="">
+                      İletişim
+                    </a>
+                  </li>
+                </ul>
               </div>
             </div>
             <div class="col-md-6 col-lg-4">

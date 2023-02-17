@@ -1,32 +1,32 @@
 <?php 
 	include 'vt.php';
 	include 'function.php';
-	if (isset($_POST['iletisimkaydet'])) {
+	if (isset($_POST['contactadd'])) {
+		$mail_host=$ayarcek["site_mail_host"];
+		$site_mail=$ayarcek["site_mail_mail"];
+		$site_mail_sifre=$ayarcek["site_mail_sifre"];
 		$sorgu=$db->prepare("
-		UPDATE iletisim SET
-		i_bas=:i_bas,
-		i_alt_bas=:i_alt_bas,
-		i_ack=:i_ack,
-		i_adr=:i_adr,
-		i_mail=:i_mail,
-		i_cep=:i_cep
-		WHERE i_id=1
+		INSERT INTO contact SET
+		name=:name,
+		mail=:mail,
+		business=:business,
+		message=:message,
+		tel=:tel
 			");
 
 		$sonuc=$sorgu->execute(array(
-		'i_bas'=>$_POST['i_bas'],
-		'i_alt_bas'=>$_POST['i_alt_bas'],
-		'i_ack'=>$_POST['i_ack'],
-		'i_adr'=>$_POST['i_adr'],
-		'i_mail'=>$_POST['i_mail'],
-		'i_cep'=>$_POST['i_cep']
+		'name'=>$_POST['name'],
+		'mail'=>$_POST['email'],
+		'business'=>$_POST['business'],
+		'message'=>$_POST['message'],
+		'tel'=>$_POST['tel']
 		));
 		if ($sonuc) {
-			header("location:../admin/iletisim.php?durum=ok");
+			header("location:../contact.php?durum=ok");
 		}
 		else
 		{
-			header("location:../admin/iletisim.php?durum=no");
+			header("location:../contact.php?durum=no");
 		}
 		exit;
 	}

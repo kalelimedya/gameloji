@@ -4,15 +4,20 @@
   <section class="contact_section layout_padding">
     <div class="container contact_heading">
       <h2>
-        Contact Us
+        BİZE ULAŞ
       </h2>
       <p>
-        psum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+        
       </p>
     </div>
+   
          <form action="islemler/ajax.php" method="POST">
     <div class="container">
- 
+       <?php if(@$_GET["durum"]=="ok") { ?>
+        <div class="alert alert-success">
+            <b>Mesaj gönderimi başarılı!</b>
+        </div>
+    <?php } ?>
         <div class="form-row">
           <div class="form-group col-md-6">
             <label for="inputName4">Adınız ve Soyadınız</label>
