@@ -73,13 +73,11 @@
   <!-- end client section -->
   <!-- contact section -->
   <section class="contact_section layout_padding">
-    <div class="container contact_heading">
+    <div class="container contact_heading custom_heading-container">
       <h2>
-        BİZE ULAŞ
-      </h2>
-      <p>
         OYUN YAPTIRMAK İÇİN İLETİŞİME GEÇİN!
-      </p>
+      </h2>
+     
     </div>
     <form action="islemler/ajax.php" method="POST">
     <div class="container">

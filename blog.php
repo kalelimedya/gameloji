@@ -2,7 +2,7 @@
   
   <section class="service_section" style="background: url('');color:black;">
     <div class="container">
-      <div class="custom_heading-container">
+      <div class="custom_heading-container custom_heading-container">
         <h2>
           BLOG
         </h2>
