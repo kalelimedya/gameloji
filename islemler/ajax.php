@@ -66,9 +66,11 @@ use PHPMailer\PHPMailer\Exception;
 
 								$mail->send();
                                 echo "Mesajınız İletildi --> ".$_POST['mail']."<br>";
-								 header("location:../contact.php?durum=ok");
+                                header("Location:../index.php?durum=ok");
+								
                                 } catch (Exception $e) {
                                 echo 'Mesajınız İletilemedi. Hata: ', $mail->ErrorInfo;
+                                header("Location:../index.php?durum=no");
                                 }
 		}
 		else

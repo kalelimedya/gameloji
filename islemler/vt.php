@@ -2,7 +2,7 @@
 	ob_start();
 	@session_start();
 	$host="localhost";
-	$vtname="bloggameloji";
+	$vtname="yigitha4_gameloji";
 	$username="yigitha4_root";
 	$password="y!ASD!qwe!";
 	try {
