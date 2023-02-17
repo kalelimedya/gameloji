@@ -43,7 +43,7 @@
 
         <div class="form-group">
           <label for="inputMessage">Mesajınız</label>
-          <input type="text" name="message" required="" class="form-control" id="inputMessage" placeholder=""/>
+          <textarea type="text" name="message" required="" class="form-control" id="inputMessage" placeholder=""></textarea>
         </div>
     </div>
 
