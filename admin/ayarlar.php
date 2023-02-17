@@ -2,7 +2,7 @@
 
 <div class="container-fluid">
 	<h4>Ayarlar</h4>
-		<form action="../yon/ajax.php" method="POST">
+		<form action="../islemler/ajax.php" method="POST" enctype="multipart/form-data">
 			<div class="row">
 					<div class="col-lg-4">
 						<label>Site Başlık:</label>

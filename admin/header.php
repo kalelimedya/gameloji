@@ -1,6 +1,6 @@
 <?php 
-    include '../yon/vt.php';
-    include '../yon/function.php';
+    include '../islemler/vt.php';
+    include '../islemler/function.php';
     if(@$_SESSION["kul_yetki"]==0) {
         header("Location:login.php");
     }

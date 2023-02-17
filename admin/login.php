@@ -1,5 +1,5 @@
 <?php 
-    include '../yon/ajax.php';
+    include '../islemler/ajax.php';
     if(@$_SESSION["kul_yetki"]==1) {
         header("Location:index.php");
     }
