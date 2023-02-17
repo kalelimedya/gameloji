@@ -1,13 +1,13 @@
 <?php include 'header.php'; ?>
 <style>
   .item-1 {
-    border: 2px solid #6f1afd;
+    border: 2px solid #54299c;
     padding-top: 20px;
     padding-bottom: 20px;
     padding-right: 10px;
     padding-left: 10px;
     transition: 1000ms all;
-    box-shadow: 3px 5px #6f1afd;
+    box-shadow: 3px 5px #54299c;
     opacity: 80%;
     filter: blur(0.5px);
   }
