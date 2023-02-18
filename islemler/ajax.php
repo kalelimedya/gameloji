@@ -130,7 +130,7 @@ if (isset($_POST['ayarkaydet'])) {
 		github=:github,
 		site_harita=:site_harita
 
-		WHERE ayar_id=0
+		WHERE ayar_id=1
 			");
 
 		$sonuc=$sorgu->execute(array(
@@ -159,11 +159,11 @@ if (isset($_POST['ayarkaydet'])) {
 		if ($_FILES['site_logo']['error']=="0") {
 			$gecici_isim=$_FILES['site_logo']['tmp_name'];
 			$dosya_ismi=rand(100000,999999).$_FILES['site_logo']['name'];
-			move_uploaded_file($gecici_isim, "../dosyalar/$dosya_ismi");
+			move_uploaded_file($gecici_isim, "../images/$dosya_ismi");
 			$sorgu=$db->prepare("
 			UPDATE ayarlar SET
 			site_logo=:site_logo 
-			WHERE id=0
+			WHERE id=1
 				");
 
 			$sonuc=$sorgu->execute(array(
@@ -178,5 +178,257 @@ if (isset($_POST['ayarkaydet'])) {
 			header("location:../admin/ayarlar.php?durum=no");
 		}
 		exit;
+	}
+	/********************************/
+	if (isset($_POST['bizesil'])) {
+			$sorgu=$db->prepare("DELETE FROM contact WHERE id=:id");
+		$sonuc=$sorgu->execute(array(
+			'id' =>$_POST['id']
+		));
+
+		if ($sonuc) {
+			header("location:../admin/bizeulas.php?durum=ok");
+		} else {
+			header("location:../admin/bizeulas.php?durum=no");
+		}
+	}
+	/********************************/
+	if (isset($_POST['blogsil'])) {
+			$sorgu=$db->prepare("DELETE FROM blog WHERE id=:id");
+		$sonuc=$sorgu->execute(array(
+			'id' =>$_POST['id']
+		));
+
+		if ($sonuc) {
+			header("location:../admin/blog.php?durum=ok");
+		} else {
+			header("location:../admin/blog.php?durum=no");
+		}
+	}
+/**************************************/
+if (isset($_POST['blogekle'])) {
+		if ($_FILES['blog_img']['error']=="0") {
+			if ($_FILES['blog_img']["type"]=="png" || "jpg") {
+				if ($_FILES['blog_img']["size"]< 1024*1024) {
+					$gecici_isim=$_FILES['blog_img']['tmp_name'];
+					$dosya_ismi=rand(100000,999999).$_FILES['blog_img']['name'];
+					move_uploaded_file($gecici_isim, "../images/$dosya_ismi");
+
+
+					$sorgu=$db->prepare("
+					INSERT INTO blog SET
+					blog_header=:blog_header,
+					blog_img=:blog_img,
+					blog_text=:blog_text,
+					blog_author=:blog_author,
+					blog_seo=:blog_seo
+
+						");
+
+					$sonuc=$sorgu->execute(array(
+					'blog_header'=>$_POST['blog_header'],
+					'blog_img'=>$dosya_ismi,
+					'blog_text'=>$_POST['blog_text'],
+					'blog_author'=>$_POST['blog_author'],
+					'blog_seo'=>seo($_POST['blog_header'])
+
+					));
+
+					if ($sonuc) {
+						header("location:../admin/blog.php?durum=ok");
+					}
+					else
+					{
+						header("location:../admin/blog.php?durum=no");
+					}
+					exit;
+				}
+				else {
+					header("Location:../admin/blog.php?durum=boyutbuyuk");
+				}
+			}
+			else {
+				header("Location:../admin/blog.php?durum=uzantiyanlis");
+			}
+		}
+	}
+/********************************/
+if (isset($_POST['postguncelle'])) {
+		if ($_FILES['blog_img']['error']=="0") {
+			if ($_FILES['blog_img']["type"]=="png" || "jpg") {
+				if ($_FILES['blog_img']["size"]< 1024*1024) {
+					$gecici_isim=$_FILES['blog_img']['tmp_name'];
+					$dosya_ismi=rand(100000,999999).$_FILES['blog_img']['name'];
+					move_uploaded_file($gecici_isim, "../images/$dosya_ismi");
+					$sorgu=$db->prepare("
+					UPDATE blog SET
+					blog_img=:blog_img 
+					WHERE id={$_POST['id']}
+						");
+					$sonuc=$sorgu->execute(array(
+					'blog_img'=>$dosya_ismi
+					));
+
+				}
+				else {
+					header("Location:../admin/blogduzenle.php?durum=boyutbuyuk");
+				}
+			}
+			else {
+				header("Location:../admin/blogduzenle.php?durum=uzantiyanlis");
+			}
+
+		}
+					
+					$sorgu=$db->prepare("
+					UPDATE blog SET
+					blog_header=:blog_header,
+					blog_text=:blog_text,
+					blog_author=:blog_author,
+					blog_seo=:blog_header
+					WHERE id={$_POST['id']}
+						");
+
+					$sonuc=$sorgu->execute(array(
+					'blog_header'=>$_POST['blog_header'],
+					'blog_text'=>$_POST['blog_text'],
+					'blog_author'=>$_POST['blog_author'],
+					'blog_seo'=>seo($_POST['blog_header'])
+
+					));
+					if ($sonuc) {
+						header("Location:../admin/blogduzenle.php?id={$_POST['id']}&durum=ok");
+					}
+					else
+					{
+						header("Location:../admin/blogduzenle.php?id={$_POST['id']}&durum=no");
+					}
+					exit;
+	}
+/*******************************/
+if (isset($_POST['blogsil'])) {
+			$sorgu=$db->prepare("DELETE FROM blog WHERE id=:id");
+		$sonuc=$sorgu->execute(array(
+			'id' =>$_POST['id']
+		));
+
+		if ($sonuc) {
+			header("location:../admin/blog.php?durum=ok");
+		} else {
+			header("location:../admin/blog.php?durum=no");
+		}
+	}
+	/*******************************/
+if (isset($_POST['oyunsil'])) {
+			$sorgu=$db->prepare("DELETE FROM project WHERE id=:id");
+		$sonuc=$sorgu->execute(array(
+			'id' =>$_POST['id']
+		));
+
+		if ($sonuc) {
+			header("location:../admin/oyunlar.php?durum=ok");
+		} else {
+			header("location:../admin/oyunlar.php?durum=no");
+		}
+	}
+	/**************************************/
+if (isset($_POST['oyunekle'])) {
+		if ($_FILES['image']['error']=="0") {
+			if ($_FILES['image']["type"]=="png" || "jpg") {
+				if ($_FILES['image']["size"]< 1024*1024) {
+					$gecici_isim=$_FILES['image']['tmp_name'];
+					$dosya_ismi=rand(100000,999999).$_FILES['image']['name'];
+					move_uploaded_file($gecici_isim, "../images/$dosya_ismi");
+
+
+					$sorgu=$db->prepare("
+					INSERT INTO project SET
+					title=:title,
+					image=:image,
+					gamestext=:gamestext,
+					play_link=:play_link,
+					app_link=:app_link
+
+						");
+
+					$sonuc=$sorgu->execute(array(
+					'title'=>$_POST['title'],
+					'image'=>$dosya_ismi,
+					'gamestext'=>$_POST['gamestext'],
+					'play_link'=>$_POST['play_link'],
+					'app_link'=>$_POST['app_link']
+
+					));
+
+					if ($sonuc) {
+						header("location:../admin/oyunlar.php?durum=ok");
+					}
+					else
+					{
+						header("location:../admin/oyunlar.php?durum=no");
+					}
+					exit;
+				}
+				else {
+					header("Location:../admin/oyunlar.php?durum=boyutbuyuk");
+				}
+			}
+			else {
+				header("Location:../admin/oyunlar.php?durum=uzantiyanlis");
+			}
+		}
+	}
+/********************************/
+if (isset($_POST['oyunguncelle'])) {
+		if ($_FILES['image']['error']=="0") {
+			if ($_FILES['image']["type"]=="png" || "jpg") {
+				if ($_FILES['image']["size"]< 1024*1024) {
+					$gecici_isim=$_FILES['image']['tmp_name'];
+					$dosya_ismi=rand(100000,999999).$_FILES['image']['name'];
+					move_uploaded_file($gecici_isim, "../images/$dosya_ismi");
+					$sorgu=$db->prepare("
+					UPDATE project SET
+					image=:image 
+					WHERE id={$_POST['id']}
+						");
+					$sonuc=$sorgu->execute(array(
+					'image'=>$dosya_ismi
+					));
+
+				}
+				else {
+					header("Location:../admin/oyunduzenle.php?durum=boyutbuyuk");
+				}
+			}
+			else {
+				header("Location:../admin/oyunduzenle.php?durum=uzantiyanlis");
+			}
+
+		}
+					
+					$sorgu=$db->prepare("
+					UPDATE project SET
+					title=:title,
+					gamestext=:gamestext,
+					play_link=:play_link,
+					app_link=:app_link
+					WHERE id={$_POST['id']}
+						");
+
+					$sonuc=$sorgu->execute(array(
+					'title'=>$_POST['title'],
+					'gamestext'=>$_POST['gamestext'],
+					'play_link'=>$_POST['play_link'],
+					'app_link'=>$_POST['app_link']
+
+					));
+					if ($sonuc) {
+						header("Location:../admin/oyunduzenle.php?id={$_POST['id']}&durum=ok");
+					}
+					else
+					{
+						header("Location:../admin/oyunduzenle.php?id={$_POST['id']}&durum=no");
+					}
+					exit;
 	}
  ?>

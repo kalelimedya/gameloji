@@ -82,7 +82,7 @@
                 </h5>
               </div>
               <div class="d-flex ">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d6309.2434272453775!2d30.552832!3d37.752018!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14c5b5a04f6249b7%3A0x76a624149201647b!2sUstam%20Park%20Evleri!5e0!3m2!1str!2str!4v1676626005364!5m2!1str!2str" width="600" height="250" style="border:0.5px solid black;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                <iframe src="<?php echo $ayarcek['site_harita'] ?>" width="600" height="250" style="border:0.5px solid black;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
               </div>
             </div>
           </div>
@@ -90,17 +90,17 @@
         <div class="d-flex flex-column flex-lg-row justify-content-between align-items-center align-items-lg-baseline">
           <div class="social-box">
             <a href="<?php echo $ayarcek['site_facebook'] ?>">
-              <img src="images/fb.png" alt=""/>
+              <img src="images/fb.png" alt="facebook"/>
             </a>
 
             <a href="<?php echo $ayarcek['site_twitter'] ?>">
-              <img src="images/twitter.png" alt=""/>
+              <img src="images/twitter.png" alt="twitter"/>
             </a>
             <a href="<?php echo $ayarcek['site_linkedin'] ?>">
-              <img src="images/linkedin1.png" alt=""/>
+              <img src="images/linkedin1.png" alt="linkedin"/>
             </a>
             <a href="<?php echo $ayarcek['site_instagram'] ?>">
-              <img src="images/instagram1.png" alt=""/>
+              <img src="images/instagram1.png" alt="instagram"/>
             </a>
           </div>
           <div class="form_container mt-5">

@@ -72,9 +72,7 @@
                 <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Site Ayarları</h6>
-                        <a class="collapse-item" href="ayarlar.php">Ayarları</a>
-                        <a class="collapse-item" href="hakkimizda.php">Hakkımızda</a>
-                        <a class="collapse-item" href="iletisim.php">İletişim</a>
+                        <a class="collapse-item" href="ayarlar.php">Ayarlar</a>
                     </div>
                 </div>
             </li>
@@ -87,9 +85,7 @@
                 <div id="collapseThree" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Kullanıcı Ayarları</h6>
-                        <a class="collapse-item" href="kullanicilar.php">Kayıtlı Kullanıcılar</a>
                         <a class="collapse-item" href="bizeulas.php">Bize Ulaş</a>
-                        <a class="collapse-item" href="yorumlar.php">Yorumlar</a>
                     </div>
                 </div>
             </li>
@@ -102,8 +98,8 @@
                 <div id="collapseFour" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">İçerik Ayarları</h6>
-                        <a class="collapse-item" href="haberler.php">Haberler</a>
-                        <a class="collapse-item" href="kategoriler.php">Kategoriler</a>
+                        <a class="collapse-item" href="blog.php">Blog</a>
+                        <a class="collapse-item" href="oyunlar.php">Oyunlar</a>
                     </div>
                 </div>
             </li>
@@ -184,11 +180,8 @@
                             <!-- Dropdown - User Information -->
                             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
                                 aria-labelledby="userDropdown">
-                                <a class="dropdown-item" href="profil.php?id=<?php echo $_SESSION["kul_id"] ?>">
-                                    <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
-                                    Profil
-                                </a>
-                                <div class="dropdown-divider"></div>
+                             
+                  
                                 <a class="dropdown-item" href="cikis.php" data-toggle="modal" data-target="#logoutModal">
                                     <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
                                     Çıkış
