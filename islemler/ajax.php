@@ -37,12 +37,12 @@ use PHPMailer\PHPMailer\Exception;
                                 try {
                                 //Server settings
                                 $mail->CharSet = 'UTF-8';
-                                $mail->SMTPDebug = 0; // debug on - off
+                                $mail->SMTPDebug = 1; // debug on - off
                                 $mail->isSMTP(); 
-                                $mail->Host = 'smtp.gmail.com'; // SMTP sunucusu örnek : mail.alanadi.com
+                                $mail->Host = 'mail.kalelimedya.com'; // SMTP sunucusu örnek : mail.alanadi.com
                                 $mail->SMTPAuth = true; // SMTP Doğrulama
-                                $mail->Username = 'uscewyazilim@gmail.com'; // Mail kullanıcı adı
-                                $mail->Password = 'jtddwpcezgvefakz'; // Mail şifresi
+                                $mail->Username = 'erenekmekci@kalelimedya.com'; // Mail kullanıcı adı
+                                $mail->Password = 'aliveli4950'; // Mail şifresi
                                 $mail->SMTPSecure = 'ssl'; // Şifreleme
                                 $mail->Port = 465; // SMTP Port
                                 $mail->SMTPOptions = array(
@@ -54,9 +54,9 @@ use PHPMailer\PHPMailer\Exception;
                                 );
                                 
                                 //Alıcılar
-                                $mail->setfrom('uscewyazilim@gmail.com', 'Soru Sorun&Teklif Al');
-                                $mail->addAddress('uscewyazilim@gmail.com');
-                                $mail->addReplyTo('uscewyazilim@gmail.com');
+                                $mail->setfrom('erenekmekci@kalelimedya.com');
+                                $mail->addAddress('erenekmekci@kalelimedya.com');
+                                $mail->addReplyTo('erenekmekci@kalelimedya.com');
                                 //İçerik
                                 $mail->isHTML(true);
                                 $mail->Subject = 'Firma:'.$_POST['business'];
@@ -70,7 +70,7 @@ use PHPMailer\PHPMailer\Exception;
 								
                                 } catch (Exception $e) {
                                 echo 'Mesajınız İletilemedi. Hata: ', $mail->ErrorInfo;
-                                header("Location:../index.php?durum=no");
+                                
                                 }
 		}
 		else
