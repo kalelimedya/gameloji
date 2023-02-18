@@ -53,7 +53,7 @@
                   </div>
                   <div class="col-md-6">
                     <h2 style="text-align: left;"><?php echo $oyuncek["title"] ?></h2>
-                    <p style="text-align: left;"><?php echo $oyuncek["gamestext"] ?></p>
+                    <div style="text-align:left;margin-bottom: 10px;"><?php echo $oyuncek["gamestext"] ?></div>
                     <div class="text-left">
                       <a href="<?php echo $oyuncek['play_link'] ?>" class="btn btn-secondary" style="border-radius:5px;">
                         <i class="fa-brands fa-google-play"></i>  Google Play Store
