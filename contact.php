@@ -2,7 +2,7 @@
 
   <!-- contact section -->
   <section class="contact_section layout_padding">
-    <div class="container contact_heading">
+    <div class="container contact_heading custom_heading-container">
       <h2>
         BİZE ULAŞ
       </h2>
@@ -43,7 +43,7 @@
 
         <div class="form-group">
           <label for="inputMessage">Mesajınız</label>
-          <input type="text" name="message" required="" class="form-control" id="inputMessage" placeholder=""/>
+          <textarea type="text" name="message" required="" class="form-control" id="inputMessage" placeholder=""></textarea>
         </div>
     </div>
 
