@@ -46,6 +46,10 @@
           <textarea type="text" name="message" required="" class="form-control" id="inputMessage" placeholder=""></textarea>
         </div>
     </div>
+	
+		<div class="g-recaptcha" 
+                data-sitekey="6LcjmK0eAAAAAClFgo2ACdu1HxnudSeE7bMoLqpY">
+            </div>
 
     <div class="d-flex justify-content-center">
       <button type="submit" name="contactadd" class="">Gönder</button>
@@ -53,5 +57,7 @@
     </form>
     
   </section>
+  
+  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 
 <?php include 'footer.php'; ?>

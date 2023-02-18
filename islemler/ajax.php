@@ -7,6 +7,21 @@ use PHPMailer\PHPMailer\Exception;
 <?php 
 	include 'vt.php';
 	include 'function.php';
+	
+		$captcha;
+if (isset($_POST['g-recaptcha-response'])) {
+    $captcha = $_POST['g-recaptcha-response'];
+}
+// Checking For correct reCAPTCHA
+$response = file_get_contents("https://www.google.com/recaptcha/api/siteverify?secret=SECRETKEY&response=" . $captcha . "&remoteip=" . $_SERVER['REMOTE_ADDR']);
+if (!$captcha || $response.success == false) {
+    echo "Your CAPTCHA response was wrong.";
+	header("location:iletisim.php?durum=no");
+    exit ;
+}
+
+	
+	
 	if (isset($_POST['contactadd'])) {
 		$mail_host=$ayarcek["site_mail_host"];
 		$site_mail=$ayarcek["site_mail_mail"];
@@ -39,9 +54,9 @@ use PHPMailer\PHPMailer\Exception;
                                 $mail->CharSet = 'UTF-8';
                                 $mail->SMTPDebug = 1; // debug on - off
                                 $mail->isSMTP(); 
-                                $mail->Host = 'mail.kalelimedya.com'; // SMTP sunucusu örnek : mail.alanadi.com
+                                $mail->Host = 'mail.phinaps.com'; // SMTP sunucusu örnek : mail.alanadi.com
                                 $mail->SMTPAuth = true; // SMTP Doğrulama
-                                $mail->Username = 'erenekmekci@kalelimedya.com'; // Mail kullanıcı adı
+                                $mail->Username = 'deneme@phinaps.com'; // Mail kullanıcı adı
                                 $mail->Password = 'aliveli4950'; // Mail şifresi
                                 $mail->SMTPSecure = 'ssl'; // Şifreleme
                                 $mail->Port = 465; // SMTP Port
@@ -54,13 +69,13 @@ use PHPMailer\PHPMailer\Exception;
                                 );
                                 
                                 //Alıcılar
-                                $mail->setfrom('erenekmekci@kalelimedya.com');
-                                $mail->addAddress('erenekmekci@kalelimedya.com');
-                                $mail->addReplyTo('erenekmekci@kalelimedya.com');
+                                $mail->setfrom('deneme@phinaps.com');
+                                $mail->addAddress('deneme@phinaps.com');
+                                $mail->addReplyTo('deneme@phinaps.com');
                                 //İçerik
                                 $mail->isHTML(true);
                                 $mail->Subject = 'Firma:'.$_POST['business'];
-                                $mail->Body ="İsim ve Soyadı:".$_POST['name']."<br>".  "Mesaj:".$_POST['message']."<br> <br>"."Telefon Numarası:".$_POST['tel']."<br>"."Şirket:".$_POST['business'];
+                                 $mail->Body ="İsim ve Soyadı:".$_POST['name']."<br>".  "Mesaj:".$_POST['message']."<br> <br>"."Telefon Numarası:".$_POST['tel']."<br>"."Şirket:".$_POST['business'];
                                 
 
 
@@ -75,7 +90,7 @@ use PHPMailer\PHPMailer\Exception;
 		}
 		else
 		{
-			header("location:../contact.php?durum=no");
+			
 		}
 		exit;
 	}
