@@ -2,6 +2,16 @@
       $sorgu=$db->prepare("SELECT * FROM project");
       $sorgu->execute();
 ?>
+
+
+<?php if(@$_GET["durum"]=="ok") { ?>
+<script>Swal.fire('Mesajınız başarılı bir şekilde gönderildi.', '', 'success')</script>
+<?php } ?>
+
+
+<?php if(@$_GET["durum"]=="no") { ?>
+<script>Swal.fire('Lütfen CAPTCHA kutusunu işaretleyin.', '', 'error')</script>
+<?php } ?>
 <style>
   .item-1 {
     border: 2px solid #54299c;
@@ -116,6 +126,10 @@
           <textarea name="message" required="" class="form-control" id="inputMessage" placeholder="Yaptırmak istediğiniz oyunu buraya yazınız!"></textarea>
         </div>
     </div>
+	
+	<div style="text-align: -webkit-center;" class="g-recaptcha" 
+                data-sitekey="6LcjmK0eAAAAAClFgo2ACdu1HxnudSeE7bMoLqpY">
+            </div>
 
     <div class="d-flex justify-content-center">
       <button type="submit" name="contactadd" class="">Gönder</button>
@@ -123,5 +137,7 @@
     </form>
     
   </section>
+  
+   <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 
 <?php include 'footer.php'; ?>

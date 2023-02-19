@@ -1,5 +1,15 @@
 <?php include 'header.php'; ?>
 
+
+<?php if(@$_GET["durum"]=="ok") { ?>
+<script>Swal.fire('Mesajınız başarılı bir şekilde gönderildi.', '', 'success')</script>
+<?php } ?>
+
+
+<?php if(@$_GET["durum"]=="no") { ?>
+<script>Swal.fire('Lütfen CAPTCHA kutusunu işaretleyin.', '', 'error')</script>
+<?php } ?>
+
   <!-- contact section -->
   <section class="contact_section layout_padding">
     <div class="container contact_heading custom_heading-container">
@@ -47,7 +57,7 @@
         </div>
     </div>
 	
-		<div class="g-recaptcha" 
+		<div style="text-align: -webkit-center;" class="g-recaptcha" 
                 data-sitekey="6LcjmK0eAAAAAClFgo2ACdu1HxnudSeE7bMoLqpY">
             </div>
 

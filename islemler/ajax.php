@@ -21,7 +21,7 @@ if (isset($_POST['g-recaptcha-response'])) {
 $response = file_get_contents("https://www.google.com/recaptcha/api/siteverify?secret=SECRETKEY&response=" . $captcha . "&remoteip=" . $_SERVER['REMOTE_ADDR']);
 if (!$captcha || $response.success == false) {
     echo "Your CAPTCHA response was wrong.";
-	header("location:iletisim.php?durum=no");
+	header("Location:../contact.php?durum=no");
     exit ;
 }
 		$mail_host=$ayarcek["site_mail_host"];

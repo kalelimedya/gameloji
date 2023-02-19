@@ -1,3 +1,6 @@
+   <?php $sorgu=$db->prepare("SELECT * FROM blog ORDER BY id DESC LIMIT 4");
+    $sorgu->execute();
+?>
 
   <!-- end contact section -->
   <div class="footer_bg">
@@ -44,37 +47,27 @@
               
               </div>
             </div>
+			
             <div class="col-md-6 col-lg-4">
               <div class="d-flex">
                 <h5>
-                  Blog
+                  Son Gönderiler
                 </h5>
               </div>
               <div class="d-flex ">
                   <ul>
+				    <?php while($sorgucek=$sorgu->fetch(PDO::FETCH_ASSOC)) { ?>
                   <li>
-                    <a href="index.php">
-                      Anasayfa
+				  
+ <a href="post.php?link=<?php echo $sorgucek['blog_seo'] ?>">
+                      <?php echo $sorgucek["blog_header"] ?>
                     </a>
                   </li>
-                  <li>
-                    <a href="service.php">
-                      Hizmetlerimiz
-                    </a>
-                  </li>
-                  <li>
-                    <a href="blog.php">
-                      Blog
-                    </a>
-                  </li>
-                  <li>
-                    <a href="">
-                      İletişim
-                    </a>
-                  </li>
+				   <?php } ?>
                 </ul>
               </div>
             </div>
+			   
             <div class="col-md-6 col-lg-4">
               <div class="d-flex">
                 <h5>
