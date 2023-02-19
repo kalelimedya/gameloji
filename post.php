@@ -1,5 +1,5 @@
 <?php include 'header.php';
-    $sorgu=$db->prepare("SELECT * FROM blog");
+    $sorgu=$db->prepare("SELECT * FROM blog WHERE blog_seo='{$_GET['link']}'");
     $sorgu->execute();
  ?>
 
