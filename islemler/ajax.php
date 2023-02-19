@@ -461,14 +461,14 @@ if (isset($_POST['sliderekle'])) {
 					INSERT INTO slider SET
 					slider_title=:slider_title,
 					slider_img=:slider_img,
-					blog_text=:blog_text
+					slider_text=:slider_text
 
 						");
 
 					$sonuc=$sorgu->execute(array(
 					'slider_title'=>$_POST['slider_title'],
 					'slider_img'=>$dosya_ismi,
-					'blog_text'=>$_POST['blog_text']
+					'slider_text'=>$_POST['slider_text']
 
 					));
 
@@ -489,5 +489,58 @@ if (isset($_POST['sliderekle'])) {
 				header("Location:../admin/slider.php?durum=uzantiyanlis");
 			}
 		}
+	}
+	/********************************/
+if (isset($_POST['sliderduzenle'])) {
+		if ($_FILES['image']['error']=="0") {
+			if ($_FILES['image']["type"]=="png" || "jpg") {
+				if ($_FILES['image']["size"]< 1024*1024) {
+					$gecici_isim=$_FILES['image']['tmp_name'];
+					$dosya_ismi=rand(100000,999999).$_FILES['image']['name'];
+					move_uploaded_file($gecici_isim, "../images/$dosya_ismi");
+					$sorgu=$db->prepare("
+					UPDATE project SET
+					image=:image 
+					WHERE id={$_POST['id']}
+						");
+					$sonuc=$sorgu->execute(array(
+					'image'=>$dosya_ismi
+					));
+
+				}
+				else {
+					header("Location:../admin/oyunduzenle.php?durum=boyutbuyuk");
+				}
+			}
+			else {
+				header("Location:../admin/oyunduzenle.php?durum=uzantiyanlis");
+			}
+
+		}
+					
+					$sorgu=$db->prepare("
+					UPDATE project SET
+					title=:title,
+					gamestext=:gamestext,
+					play_link=:play_link,
+					app_link=:app_link
+					WHERE id={$_POST['id']}
+						");
+
+					$sonuc=$sorgu->execute(array(
+					'title'=>$_POST['title'],
+					'gamestext'=>$_POST['gamestext'],
+					'play_link'=>$_POST['play_link'],
+					'app_link'=>$_POST['app_link']
+
+					));
+					if ($sonuc) {
+						header("Location:../admin/oyunduzenle.php?id={$_POST['id']}&durum=ok");
+					}
+					else
+					{
+						header("Location:../admin/oyunduzenle.php?id={$_POST['id']}&durum=no");
+					}
+					exit;
 	}
  ?>
