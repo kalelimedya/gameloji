@@ -28,19 +28,18 @@
          <?php echo $sorgucek["blog_header"] ?>
         </h2>
       </div>
+	   <p> <?php echo $sorgucek["blog_author"] ?> tarafından <?php echo $sorgucek["blog_date"] ?> tarihinde yayınlandı</p>
       <div class="layout_padding2">
         <div class="img-box">
-          <img src="images/welcome.png" alt=""/>
+           <img src="images/<?php echo $sorgucek['blog_img'] ?>" alt="<?php echo $sorgucek['blog_header'] ?>"/>
         </div>
         <div class="detail-box">
+         
           <div class="container">
              <?php echo $sorgucek["blog_text"] ?>
           </div>
-          <div>
-            <a href="">
-              Read More
-            </a>
-          </div>
+       
+       
         </div>
       </div>
 
