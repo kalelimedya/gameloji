@@ -18,31 +18,35 @@
 </style>
 
 
- <section style="margin-bottom:80px;padding-top: 20px;">
+
  <?php while($sorgucek=$sorgu->fetch(PDO::FETCH_ASSOC)) { ?>
 
-       <div class="custom_heading-container custom_heading-container">
-        <h2 class="custom_heading-container">
+       <section class="welcome_section layout_padding">
+    <div class="container">
+      <div class="custom_heading-container">
+        <h2>
          <?php echo $sorgucek["blog_header"] ?>
         </h2>
       </div>
- <div class="service_container layout_padding2">
-
-
-          <div style="  height: 403px;" class="service_box">
-          <div style="text-align: center;" class="img-box">
-            <img style="height: 250px;" src="images/<?php echo $sorgucek['blog_img'] ?>" alt="<?php echo $sorgucek['blog_header'] ?>"/>
-          </div>
-		  </div>
-<div class="blog-text">
-<div class="container">
-             
+      <div class="layout_padding2">
+        <div class="img-box">
+          <img src="images/welcome.png" alt=""/>
+        </div>
+        <div class="detail-box">
+          <p>
               <?php echo $sorgucek["blog_text"] ?>
-             
-     </div>       
- </div>
-</div>
-</section>
+          </p>
+          <div>
+            <a href="">
+              Read More
+            </a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
   <?php } ?>
 
 
