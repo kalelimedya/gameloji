@@ -7,7 +7,7 @@
 	<div class="container-fluid">
 		<div class="row" style="margin-bottom: 20px;">
 			<div class="col-md-6">
-				<h4>Proje İçerikleri</h4>
+				<h4>Slider İçerikleri</h4>
 			</div>
 			<div class="col-md-6 text-right">
 				<a class="btn btn-primary btn-circle" href="sliderekle.php"><i class="fa fa-plus"></i></a>

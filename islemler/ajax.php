@@ -8,7 +8,12 @@ use PHPMailer\PHPMailer\Exception;
 	include 'vt.php';
 	include 'function.php';
 	
-		$captcha;
+	
+
+	
+	
+	if (isset($_POST['contactadd'])) {
+			$captcha;
 if (isset($_POST['g-recaptcha-response'])) {
     $captcha = $_POST['g-recaptcha-response'];
 }
@@ -19,10 +24,6 @@ if (!$captcha || $response.success == false) {
 	header("location:iletisim.php?durum=no");
     exit ;
 }
-
-	
-	
-	if (isset($_POST['contactadd'])) {
 		$mail_host=$ayarcek["site_mail_host"];
 		$site_mail=$ayarcek["site_mail_mail"];
 		$site_mail_sifre=$ayarcek["site_mail_sifre"];
@@ -460,14 +461,14 @@ if (isset($_POST['sliderekle'])) {
 					INSERT INTO slider SET
 					slider_title=:slider_title,
 					slider_img=:slider_img,
-					blog_text=:blog_text
+					slider_text=:slider_text
 
 						");
 
 					$sonuc=$sorgu->execute(array(
 					'slider_title'=>$_POST['slider_title'],
 					'slider_img'=>$dosya_ismi,
-					'blog_text'=>$_POST['blog_text']
+					'slider_text'=>$_POST['slider_text']
 
 					));
 
@@ -487,6 +488,69 @@ if (isset($_POST['sliderekle'])) {
 			else {
 				header("Location:../admin/slider.php?durum=uzantiyanlis");
 			}
+		}
+	}
+	/********************************/
+if (isset($_POST['sliderduzenle'])) {
+		if ($_FILES['slider_img']['error']=="0") {
+			if ($_FILES['slider_img']["type"]=="png" || "jpg") {
+				if ($_FILES['slider_img']["size"]< 1024*1024) {
+					$gecici_isim=$_FILES['slider_img']['tmp_name'];
+					$dosya_ismi=rand(100000,999999).$_FILES['slider_img']['name'];
+					move_uploaded_file($gecici_isim, "../images/$dosya_ismi");
+					$sorgu=$db->prepare("
+					UPDATE slider SET
+					slider_img=:slider_img 
+					WHERE slider_id={$_GET['slider_id']}
+						");
+					$sonuc=$sorgu->execute(array(
+					'image'=>$dosya_ismi
+					));
+
+				}
+				else {
+					header("Location:../admin/slider.php?durum=boyutbuyuk");
+				}
+			}
+			else {
+				header("Location:../admin/slider.php?durum=uzantiyanlis");
+			}
+
+		}
+					
+					$sorgu=$db->prepare("
+					UPDATE slider SET
+					slider_title=:slider_title,
+					slider_text=:slider_text
+
+					WHERE slider_id={$_POST['slider_id']}
+						");
+
+					$sonuc=$sorgu->execute(array(
+					'slider_title'=>$_POST['slider_title'],
+					'slider_text'=>$_POST['slider_text']
+
+					));
+					if ($sonuc) {
+						header("Location:../admin/slider.php?slider_id={$_POST['slider_id']}&durum=ok");
+					}
+					else
+					{
+						header("Location:../admin/slider.php?slider_id={$_POST['slider_id']}&durum=no");
+					}
+					exit;
+	}
+	/********************************/
+	if (isset($_POST['slidersil'])) {
+			$sorgu=$db->prepare("DELETE FROM slider WHERE slider_id=:slider_id");
+		$sonuc=$sorgu->execute(array(
+			'slider_id' =>$_POST['slider_id']
+		));
+
+		if ($sonuc) {
+			header("location:../admin/slider.php?durum=ok");
+		} else {
+			header("location:../admin/slider.php?durum=no");
 		}
 	}
  ?>

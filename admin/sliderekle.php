@@ -16,11 +16,11 @@
 				
 				<div class="col-md-12">
 					<label>Slider İçeriği:</label>
-					<textarea id="editor" required="" name="slider_img"></textarea>
+					<textarea id="editor" required="" name="slider_text"></textarea>
 				</div>
 			</div>
 			<div style="margin-top:15px;">
-				<button type="submit" class="btn btn-primary btn-block" name="sliderekle">Post Ekle</button>
+				<button type="submit" class="btn btn-primary btn-block" name="sliderekle">Slider Ekle</button>
 			</div>
 		</form>
 	</div>
