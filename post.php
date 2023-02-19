@@ -37,7 +37,8 @@
         <div class="img-box">
            <img src="images/<?php echo $sorgucek['blog_img'] ?>" alt="<?php echo $sorgucek['blog_header'] ?>"/>
         </div>
-        <div class="detail-box">
+        <div style="box-shadow: rgb(0 0 0 / 24%) 0px 3px 8px;
+    border-radius: 50px;" class="detail-box">
          
           <div class="container">
              <?php echo $sorgucek["blog_text"] ?>
