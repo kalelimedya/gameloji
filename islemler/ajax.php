@@ -57,8 +57,8 @@ if (!$captcha || $response.success == false) {
                                 $mail->isSMTP(); 
                                 $mail->Host = 'mail.phinaps.com'; // SMTP sunucusu örnek : mail.alanadi.com
                                 $mail->SMTPAuth = true; // SMTP Doğrulama
-                                $mail->Username = 'deneme@phinaps.com'; // Mail kullanıcı adı
-                                $mail->Password = 'aliveli4950'; // Mail şifresi
+                                $mail->Username = $site_mail; // Mail kullanıcı adı
+                                $mail->Password = $site_mail_sifre; // Mail şifresi
                                 $mail->SMTPSecure = 'ssl'; // Şifreleme
                                 $mail->Port = 465; // SMTP Port
                                 $mail->SMTPOptions = array(
@@ -70,9 +70,9 @@ if (!$captcha || $response.success == false) {
                                 );
                                 
                                 //Alıcılar
-                                $mail->setfrom('deneme@phinaps.com');
-                                $mail->addAddress('deneme@phinaps.com');
-                                $mail->addReplyTo('deneme@phinaps.com');
+                                $mail->setfrom('info@gameloji.com');
+                                $mail->addAddress('info@gameloji.com');
+                                $mail->addReplyTo('info@gameloji.com');
                                 //İçerik
                                 $mail->isHTML(true);
                                 $mail->Subject = 'Firma:'.$_POST['business'];

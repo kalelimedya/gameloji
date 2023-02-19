@@ -65,11 +65,11 @@
                     <h2 style="text-align: left;"><?php echo $oyuncek["title"] ?></h2>
                     <div style="text-align:left;margin-bottom: 10px;"><?php echo $oyuncek["gamestext"] ?></div>
                     <div class="text-left">
-                      <a href="<?php echo $oyuncek['play_link'] ?>" class="btn btn-secondary" style="border-radius:5px;">
-                        <i class="fa-brands fa-google-play"></i>  Google Play Store
+                      <a href="<?php echo $oyuncek['play_link'] ?>" style="border-radius:5px;">
+                        <img src="images/play.png" width="120" class="img-fluid">
                       </a> <br>
-                       <a href="<?php echo $oyuncek['app_link'] ?>" class="btn btn-secondary" style="border-radius:5px;margin-top: 10px;">
-                        <i class="fa-brands fa-app-store-ios"></i> App Store
+                       <a href="<?php echo $oyuncek['app_link'] ?>" style="border-radius:5px;margin-top: 10px;">
+                        <img src="images/app.png" width="120" class="img-fluid" style="margin-top:10px;">
                       </a>
                     </div>
                   </div>
@@ -123,7 +123,7 @@
         </div>
         <div class="form-group">
           <label for="inputMessage">Mesaj</label>
-          <textarea name="message" required="" class="form-control" id="inputMessage" placeholder="Yaptırmak istediğiniz oyunu buraya yazınız!"></textarea>
+          <textarea name="message" required="" class="form-control" maxlength="1000" id="inputMessage" placeholder="Talep ettiğiniz oyunu lütfen kısaca açıklayınız!"></textarea>
         </div>
     </div>
 	

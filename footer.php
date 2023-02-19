@@ -8,7 +8,7 @@
     <section class="info_section layout_padding2-bottom">
       <div class="container">
         <h3 class="">
-         <?php echo $ayarcek["site_sahip_mail"] ?>
+         Gameoloji
         </h3>
       </div>
       <div class="container info_content">
@@ -26,11 +26,6 @@
                   <li>
                     <a href="index.php">
                       Anasayfa
-                    </a>
-                  </li>
-                  <li>
-                    <a href="service.php">
-                      Hizmetlerimiz
                     </a>
                   </li>
                   <li>
