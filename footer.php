@@ -8,7 +8,7 @@
     <section class="info_section layout_padding2-bottom">
       <div class="container">
         <h3 class="">
-          BigWing
+         <?php echo $ayarcek["site_sahip_mail"] ?>
         </h3>
       </div>
       <div class="container info_content">
