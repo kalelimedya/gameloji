@@ -28,7 +28,11 @@
          <?php echo $sorgucek["blog_header"] ?>
         </h2>
       </div>
-	   <p> <?php echo $sorgucek["blog_author"] ?> tarafından <?php echo $sorgucek["blog_date"] ?> tarihinde yayınlandı</p>
+	   <p style="display: block;
+    font-size: 12px;
+    font-style: italic;
+    color: #b4b4b4;
+    margin-bottom: 5px;"> <?php echo $sorgucek["blog_author"] ?> tarafından <?php echo $sorgucek["blog_date"] ?> tarihinde yayınlandı</p>
       <div class="layout_padding2">
         <div class="img-box">
            <img src="images/<?php echo $sorgucek['blog_img'] ?>" alt="<?php echo $sorgucek['blog_header'] ?>"/>
