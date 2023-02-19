@@ -21,10 +21,11 @@
 
  <?php while($sorgucek=$sorgu->fetch(PDO::FETCH_ASSOC)) { ?>
 
-  <section class="welcome_section layout_padding">
-    <div class="container">
+  <section class="welcome_section layout_padding" style="margin-bottom:100px;">
+    <div class="container" style="box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;border-radius: 20px;
+">
       <div class="custom_heading-container">
-        <h2>
+        <h2 style="margin-top:20px;">
          <?php echo $sorgucek["blog_header"] ?>
         </h2>
       </div>
@@ -35,14 +36,13 @@
     margin-bottom: 5px;"> <?php echo $sorgucek["blog_author"] ?> tarafından <?php echo $sorgucek["blog_date"] ?> tarihinde yayınlandı</p>
       <div class="layout_padding2">
         <div class="img-box">
-           <img src="images/<?php echo $sorgucek['blog_img'] ?>" alt="<?php echo $sorgucek['blog_header'] ?>"/>
+           <img src="images/<?php echo $sorgucek['blog_img'] ?>" alt="<?php echo $sorgucek['blog_header'] ?>" style="border-radius: 10px;border:0.5px solid darkgrey;">
         </div>
-        <div style="box-shadow: rgb(0 0 0 / 24%) 0px 3px 8px;
-    border-radius: 50px;" class="detail-box">
+        <div class="detail-box">
          
-          <div class="container">
+        
              <?php echo $sorgucek["blog_text"] ?>
-          </div>
+         
        
        
         </div>
