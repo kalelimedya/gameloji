@@ -18,7 +18,7 @@
 </style>
 
 
- <div class="container">
+ <section style="margin-bottom:40px;padding-top: 20px;">
  <?php while($sorgucek=$sorgu->fetch(PDO::FETCH_ASSOC)) { ?>
 
        <div class="custom_heading-container custom_heading-container">
@@ -38,10 +38,11 @@
 <p>
              
               <?php echo $sorgucek["blog_text"] ?>
+              
             </p>
  </div>
 </div>
-</div>
+</section>
   <?php } ?>
 
 
