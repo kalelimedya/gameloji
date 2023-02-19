@@ -446,4 +446,47 @@ if (isset($_POST['oyunguncelle'])) {
 					}
 					exit;
 	}
+	/**************************************/
+if (isset($_POST['sliderekle'])) {
+		if ($_FILES['slider_img']['error']=="0") {
+			if ($_FILES['slider_img']["type"]=="png" || "jpg") {
+				if ($_FILES['slider_img']["size"]< 1024*1024) {
+					$gecici_isim=$_FILES['slider_img']['tmp_name'];
+					$dosya_ismi=rand(100000,999999).$_FILES['slider_img']['name'];
+					move_uploaded_file($gecici_isim, "../images/$dosya_ismi");
+
+
+					$sorgu=$db->prepare("
+					INSERT INTO slider SET
+					slider_title=:slider_title,
+					slider_img=:slider_img,
+					blog_text=:blog_text
+
+						");
+
+					$sonuc=$sorgu->execute(array(
+					'slider_title'=>$_POST['slider_title'],
+					'slider_img'=>$dosya_ismi,
+					'blog_text'=>$_POST['blog_text']
+
+					));
+
+					if ($sonuc) {
+						header("location:../admin/slider.php?durum=ok");
+					}
+					else
+					{
+						header("location:../admin/slider.php?durum=no");
+					}
+					exit;
+				}
+				else {
+					header("Location:../admin/slider.php?durum=boyutbuyuk");
+				}
+			}
+			else {
+				header("Location:../admin/slider.php?durum=uzantiyanlis");
+			}
+		}
+	}
  ?>

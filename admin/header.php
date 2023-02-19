@@ -100,6 +100,7 @@
                         <h6 class="collapse-header">İçerik Ayarları</h6>
                         <a class="collapse-item" href="blog.php">Blog</a>
                         <a class="collapse-item" href="oyunlar.php">Oyunlar</a>
+                        <a class="collapse-item" href="slider.php">Slider</a>
                     </div>
                 </div>
             </li>
