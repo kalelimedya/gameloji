@@ -492,16 +492,16 @@ if (isset($_POST['sliderekle'])) {
 	}
 	/********************************/
 if (isset($_POST['sliderduzenle'])) {
-		if ($_FILES['image']['error']=="0") {
-			if ($_FILES['image']["type"]=="png" || "jpg") {
-				if ($_FILES['image']["size"]< 1024*1024) {
-					$gecici_isim=$_FILES['image']['tmp_name'];
-					$dosya_ismi=rand(100000,999999).$_FILES['image']['name'];
+		if ($_FILES['slider_img']['error']=="0") {
+			if ($_FILES['slider_img']["type"]=="png" || "jpg") {
+				if ($_FILES['slider_img']["size"]< 1024*1024) {
+					$gecici_isim=$_FILES['slider_img']['tmp_name'];
+					$dosya_ismi=rand(100000,999999).$_FILES['slider_img']['name'];
 					move_uploaded_file($gecici_isim, "../images/$dosya_ismi");
 					$sorgu=$db->prepare("
-					UPDATE project SET
-					image=:image 
-					WHERE id={$_POST['id']}
+					UPDATE slider SET
+					slider_img=:slider_img 
+					WHERE slider_id={$_GET['slider_id']}
 						");
 					$sonuc=$sorgu->execute(array(
 					'image'=>$dosya_ismi
@@ -509,38 +509,48 @@ if (isset($_POST['sliderduzenle'])) {
 
 				}
 				else {
-					header("Location:../admin/oyunduzenle.php?durum=boyutbuyuk");
+					header("Location:../admin/slider.php?durum=boyutbuyuk");
 				}
 			}
 			else {
-				header("Location:../admin/oyunduzenle.php?durum=uzantiyanlis");
+				header("Location:../admin/slider.php?durum=uzantiyanlis");
 			}
 
 		}
 					
 					$sorgu=$db->prepare("
-					UPDATE project SET
-					title=:title,
-					gamestext=:gamestext,
-					play_link=:play_link,
-					app_link=:app_link
-					WHERE id={$_POST['id']}
+					UPDATE slider SET
+					slider_title=:slider_title,
+					slider_text=:slider_text
+
+					WHERE slider_id={$_POST['slider_id']}
 						");
 
 					$sonuc=$sorgu->execute(array(
-					'title'=>$_POST['title'],
-					'gamestext'=>$_POST['gamestext'],
-					'play_link'=>$_POST['play_link'],
-					'app_link'=>$_POST['app_link']
+					'slider_title'=>$_POST['slider_title'],
+					'slider_text'=>$_POST['slider_text']
 
 					));
 					if ($sonuc) {
-						header("Location:../admin/oyunduzenle.php?id={$_POST['id']}&durum=ok");
+						header("Location:../admin/slider.php?slider_id={$_POST['slider_id']}&durum=ok");
 					}
 					else
 					{
-						header("Location:../admin/oyunduzenle.php?id={$_POST['id']}&durum=no");
+						header("Location:../admin/slider.php?slider_id={$_POST['slider_id']}&durum=no");
 					}
 					exit;
+	}
+	/********************************/
+	if (isset($_POST['slidersil'])) {
+			$sorgu=$db->prepare("DELETE FROM slider WHERE slider_id=:slider_id");
+		$sonuc=$sorgu->execute(array(
+			'slider_id' =>$_POST['slider_id']
+		));
+
+		if ($sonuc) {
+			header("location:../admin/slider.php?durum=ok");
+		} else {
+			header("location:../admin/slider.php?durum=no");
+		}
 	}
  ?>

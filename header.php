@@ -1,4 +1,8 @@
-<?php include 'islemler/vt.php'; ?>
+<?php include 'islemler/vt.php'; 
+      $sorgu2=$db->prepare("SELECT * FROM slider");
+      $sorgu2->execute();
+      $say=1;
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -107,9 +111,6 @@
     <section class=" slider_section ">
       <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
         <ol class="carousel-indicators">
-          <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active">01</li>
-          <li data-target="#carouselExampleIndicators" data-slide-to="1">02</li>
-          <li data-target="#carouselExampleIndicators" data-slide-to="2">03</li>
         </ol>
         <div class="carousel-inner">
           <div class="carousel-item active">
@@ -138,37 +139,34 @@
               </div>
             </div>
           </div>
-
+          <?php while($slidercek=$sorgu2->fetch(PDO::FETCH_ASSOC)) { ?>
           <div class="carousel-item">
             <div class="container">
               <div class="row">
                 <div class="col-lg-5 col-md-6">
                   <div class="slider_detail-box">
                     <h1>
-                      Start <br/>
-                      Business with <br/>
-                      Our Company
+                      <?php echo $slidercek["slider_title"] ?>
                     </h1>
-                    <p>
-                      sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
-                      nostrud exercitation ullamco laboris nisi
-                    </p>
+                    <div>
+                       <?php echo $slidercek["slider_text"] ?>
+                   </div>
                     <div class="btn-box">
-                      <a href="" class="btn-1">
-                        Read More
+                      <a href="contact.php" class="btn-1">
+                        İletişim
                       </a>
                     </div>
                   </div>
                 </div>
                 <div class="col-md-6">
                   <div class="slider_img-box">
-                    <img src="images/slider-img.png" alt=""/>
+                    <img src="images/<?php echo $slidercek['slider_img'] ?>" alt=""/>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-         
+          <?php } ?>
         </div>
         <div class="carousel_btn-container">
           <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
