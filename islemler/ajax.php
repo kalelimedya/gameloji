@@ -8,7 +8,12 @@ use PHPMailer\PHPMailer\Exception;
 	include 'vt.php';
 	include 'function.php';
 	
-		$captcha;
+	
+
+	
+	
+	if (isset($_POST['contactadd'])) {
+			$captcha;
 if (isset($_POST['g-recaptcha-response'])) {
     $captcha = $_POST['g-recaptcha-response'];
 }
@@ -19,10 +24,6 @@ if (!$captcha || $response.success == false) {
 	header("location:iletisim.php?durum=no");
     exit ;
 }
-
-	
-	
-	if (isset($_POST['contactadd'])) {
 		$mail_host=$ayarcek["site_mail_host"];
 		$site_mail=$ayarcek["site_mail_mail"];
 		$site_mail_sifre=$ayarcek["site_mail_sifre"];

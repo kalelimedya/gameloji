@@ -20,7 +20,7 @@
 				</div>
 			</div>
 			<div style="margin-top:15px;">
-				<button type="submit" class="btn btn-primary btn-block" name="sliderekle">Post Ekle</button>
+				<button type="submit" class="btn btn-primary btn-block" name="sliderekle">Slider Ekle</button>
 			</div>
 		</form>
 	</div>
