@@ -62,14 +62,14 @@
                     </div>
                   </div>
                   <div class="col-md-6">
-                    <h2 style="text-align: left;"><?php echo $oyuncek["title"] ?></h2>
-                    <div style="text-align:left;margin-bottom: 10px;"><?php echo $oyuncek["gamestext"] ?></div>
+                    <h2 style="text-align: left;margin-top:40px;"><?php echo $oyuncek["title"] ?></h2>
+                    <div style="text-align:left;margin-bottom: 10px;margin-top: 35px;"><?php echo $oyuncek["gamestext"] ?></div>
                     <div class="text-left">
                       <a href="<?php echo $oyuncek['play_link'] ?>" style="border-radius:5px;">
-                        <img src="images/play.png" width="120" class="img-fluid">
-                      </a> <br>
-                       <a href="<?php echo $oyuncek['app_link'] ?>" style="border-radius:5px;margin-top: 10px;">
-                        <img src="images/app.png" width="120" class="img-fluid" style="margin-top:10px;">
+                        <img src="images/play.png" width="200" class="img-fluid">
+                      </a>
+                       <a href="<?php echo $oyuncek['app_link'] ?>" style="border-radius:5px;">
+                        <img src="images/app.png" width="200" class="img-fluid">
                       </a>
                     </div>
                   </div>
